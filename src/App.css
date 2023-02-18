@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --primary-color: #7286d3;
+  --secondary-color: #8ea7e9;
+  --accent-color: #e5e0ff;
+  --bg-color: #fff2f2;
+  --body-font: "Roboto", sans-serif;
+  --title-font: "Mulish", sans-serif;
+}
+[data-theme="dark"] {
+  --primary-color: #0a2647;
+  --secondary-color: #144272;
+  --accent-color: #205295;
+  --bg-color: #2c74b3;
+}
+
+body * {
+  font-family: var(--body-font);
+}
+
+.title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--title-font);
+}
+.title span {
+  color: var(--primary-color);
+}
+
+.sidebar .title {
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
+  text-align: center;
+}

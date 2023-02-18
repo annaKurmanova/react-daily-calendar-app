@@ -1,1 +1,0 @@
-# react-daily-calendar-app
