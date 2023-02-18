@@ -7,15 +7,20 @@
   --bg-color: #fff2f2;
   --body-font: "Roboto", sans-serif;
   --title-font: "Mulish", sans-serif;
-}
-[data-theme="dark"] {
-  --primary-color: #0a2647;
-  --secondary-color: #144272;
-  --accent-color: #205295;
-  --bg-color: #2c74b3;
+  --primary-color-dark: #0a2647;
+  --secondary-color-dark: #144272;
+  --accent-color-dark: #205295;
+  --bg-color-dark: #2c74b3;
 }
 
-body * {
+.App.light {
+  background-color: var(--bg-color);
+}
+.App {
+  transition: all 0.3s ease;
+}
+
+* {
   font-family: var(--body-font);
 }
 
@@ -32,4 +37,74 @@ body * {
   background-color: var(--secondary-color);
   padding: 0.5rem;
   text-align: center;
+}
+
+/* dark theme */
+.App.dark {
+  background-color: var(--primary-color-dark);
+  color: var(--bg-color);
+}
+
+.App.dark .sidebar .title {
+  background-color: var(--secondary-color-dark);
+}
+
+/* theme switch */
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: var(--bg-color-dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
